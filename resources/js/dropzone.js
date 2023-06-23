@@ -16,10 +16,6 @@ const dropzone = new Dropzone("#dropzone", {
 
 dropzone.on("success", function (file, response) {
 
-    arrayRes = [];
-    response.imagen.push(arrayRes);
-    document.querySelector('[name="imagen"]').value = arrayRes;
-});
 
 dropzone.on("removedfile", function () {
     document.querySelector('[name="imagen"]').value = "";
