@@ -76,6 +76,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/trafico',[TraficoController::class,'create'])->name('trafico.create');
     Route::post('/trafico',[TraficoController::class,'store'])->name('trafico.store');
     Route::get('/trafico/{trafico:id}',[TraficoController::class,'edit'])->name('trafico.edit');
+    Route::get('/factura/{trafico:id}',[TraficoController::class,'createfactura'])->name('factura.create');
 });
 
 Route::middleware('auth')->group(function (){

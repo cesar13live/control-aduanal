@@ -8,18 +8,14 @@ const dropzone = new Dropzone("#dropzone", {
     acceptedFiles: ".png,.jpg,.jpeg,.gif",
     addRemoveLinks: true,
     dictRemoveFile: "Borrar Archivo",
-
 });
 
 let responsesArray = [];
-dropzone.on("success", function (file, response) {
-
-    responsesArray.push(response); // Push the response value into the array
-    // console.log(responsesArray);
-    // console.log(responsesArray.join(','));
-    // document.querySelector('[name="imagen"]').value = responsesArray;
 
 
+dropzone.on("success", function (file, response,event) {
+    
+    responsesArray.push(response); 
 
     let val = responsesArray.map(function(objeto) {
         return objeto.imagen;
@@ -27,8 +23,7 @@ dropzone.on("success", function (file, response) {
       
       let res = val.join(",");
       console.log(res); // Resultado: "10, 20, 30"
-    document.querySelector('[name="imagen"]').value = res;
-
+      document.querySelector('[name="imagen"]').value = res;
 });
 
 dropzone.on("removedfile", function () {

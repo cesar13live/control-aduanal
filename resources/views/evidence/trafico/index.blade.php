@@ -16,8 +16,6 @@
                       <div class="col">
                          <img src="{{ asset('uploads/traficos/' . $item) }}" class="gallery-item" alt="gallery">
                       </div>
-
-                      {{-- <p>{{$item}}</p> --}}
                       @endforeach 
                    </div>
                 </div>

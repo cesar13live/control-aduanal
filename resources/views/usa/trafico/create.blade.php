@@ -18,7 +18,7 @@
                         <div class="md:w-1/4">
                             <x-text-input 
                             id="imagen" 
-                            class="block mt-1 w-full uppercase" 
+                            class="mt-1 w-full uppercase hidden" 
                             type="text"
                             name="imagen"/>
 

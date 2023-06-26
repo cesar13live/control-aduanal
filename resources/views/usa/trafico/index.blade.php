@@ -61,6 +61,12 @@
                                             <button class="btn btn-warning"><i
                                                     class="bi bi-card-image"></i> Imagenes</button>
                                         </a>
+
+                                    <a href="{{route('factura.create',$trafico->id)}}">
+                                        <button class="btn btn-warning">
+                                        <i class="bi bi-receipt"></i>Factura
+                                        </button>
+                                    </a>
                                     </div>
 
                                 </td>
