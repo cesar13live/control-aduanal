@@ -52,7 +52,7 @@
                                 <td>{{$trafico->usuario}}</td>
                                 <td>
                                     <div class="flex gap-2">
-                                        <a href="/target">
+                                        <a href="{{route('trafico.edit',$trafico->id)}}">
                                             <button class="btn btn-warning"><i
                                                     class="bi bi-pencil-square"></i>Editar</button>
                                         </a>

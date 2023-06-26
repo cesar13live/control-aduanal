@@ -10,24 +10,15 @@
             <section class="gallery min-vh-100">
                 <div class="container-lg">
                    <div class="row gap-y-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+                     @foreach ( $array as $item )
+         
                       <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
+                         <img src="{{ asset('uploads/traficos/' . $item) }}" class="gallery-item" alt="gallery">
                       </div>
-                      <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
-                      </div>
-                      <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
-                      </div>
-                      <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
-                      </div>
-                      <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
-                      </div>
-                      <div class="col">
-                         <img src="img/cheems.jpg" class="gallery-item" alt="gallery">
-                      </div>
+
+                      {{-- <p>{{$item}}</p> --}}
+                      @endforeach 
                    </div>
                 </div>
              </section>

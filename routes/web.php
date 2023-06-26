@@ -75,6 +75,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/traficos',[TraficoController::class,'index'])->name('trafico.index');
     Route::get('/trafico',[TraficoController::class,'create'])->name('trafico.create');
     Route::post('/trafico',[TraficoController::class,'store'])->name('trafico.store');
+    Route::get('/trafico/{trafico:id}',[TraficoController::class,'edit'])->name('trafico.edit');
 });
 
 Route::middleware('auth')->group(function (){
@@ -98,13 +99,7 @@ Route::post('/imagenesTrafico', [ImagenTraficoController::class, 'store'])->name
 
 
 Route::get('/evTrafico', [EvidenciaTraficoController::class,'index'])->name('evTrafico');
-Route::get('/evTrafico/{evTrafico}',[EvidenciaTraficoController::class,'show'])->name('evTrafico.show');
-
-
-
-
-
-
+Route::get('/evTrafico/{trafico:id}',[EvidenciaTraficoController::class,'show'])->name('evTrafico.show');
 
 
 require __DIR__ . '/auth.php';

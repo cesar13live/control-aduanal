@@ -85,4 +85,9 @@ class TraficoController extends Controller
         return redirect()->route('trafico.index');
         
     }
+
+
+    public function edit(Trafico $trafico){
+        dd($trafico->id);
+    }
 }
