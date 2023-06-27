@@ -10,6 +10,7 @@ use App\Http\Controllers\ImagenTraficoController;
 use App\Http\Controllers\ParteController;
 use App\Http\Controllers\TransportistaController;
 use App\Http\Controllers\TraficoController;
+use App\Http\Controllers\FacturaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ShowBultosArribos;
 use App\Http\Controllers\EvidenciaTraficoController;
@@ -76,7 +77,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/trafico',[TraficoController::class,'create'])->name('trafico.create');
     Route::post('/trafico',[TraficoController::class,'store'])->name('trafico.store');
     Route::get('/trafico/{trafico:id}',[TraficoController::class,'edit'])->name('trafico.edit');
-    Route::get('/factura/{trafico:id}',[TraficoController::class,'createfactura'])->name('factura.create');
+    Route::get('/factura/{trafico:id}',[FacturaController::class,'create'])->name('factura.create');
 });
 
 Route::middleware('auth')->group(function (){

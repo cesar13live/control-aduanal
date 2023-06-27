@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+
 
 <x-app-layout>
     <x-slot name="header">
@@ -9,78 +15,65 @@
 
     <div class="py-12">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8 flex gap-5">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg w-3/4">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg w-full">
                 <div class="block m-6">
-            
-                   
-                </div>
-            </form>
-            </div>
 
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#factura" type="button" role="tab" aria-controls="home"
+                                aria-selected="true">Facturas</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bultos"
+                                type="button" role="tab" aria-controls="profile"
+                                aria-selected="false">Bultos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ferro"
+                                type="button" role="tab" aria-controls="contact"
+                                aria-selected="false">Ferrocarril</button>
+                        </li>
 
-            <div class="md:w-1/4">
-                <form action="{{ route('imagenesTrafico.store') }}" method="POST"
-                    class="dropzone border-2 w-full rounded flex-col justify-center items-center border-dashed h-96"
-                    id="dropzone" name="dropzone">
-                    @csrf
-                </form>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#patio"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">FF CC
+                                Patio</button>
+                        </li>
 
-                <x-primary-button>
-                    {{ __('agregar factura') }}
-                </x-primary-button>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#comentarios"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">
+                                Comentarios</button>
+                        </li>
 
-                <x-primary-button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button">
-                    {{ __('agregar bulto') }}
-                </x-primary-button>
-            </div>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#datos"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">
+                                Datos de Salida</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="factura" role="tabpanel"
+                            aria-labelledby="home-tab">facturas</div>
+                        <div class="tab-pane fade" id="bultos" role="tabpanel" aria-labelledby="profile-tab">bultos
+                        </div>
+                        <div class="tab-pane fade" id="ferro" role="tabpanel" aria-labelledby="contact-tab">ferro
+                        </div>
+                        <div class="tab-pane fade" id="patio" role="tabpanel" aria-labelledby="contact-tab">Patio
+                        </div>
+                        <div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="contact-tab">Comentarios
+                        </div>
+                        <div class="tab-pane fade" id="datos" role="tabpanel" aria-labelledby="contact-tab">Datos de Salida
+                        </div>
 
-        </div>
-
-
-        <div id="popup-modal" tabindex="-1"
-            class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
-            <div class="relative w-full h-full max-w-md md:h-auto">
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <button type="button"
-                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                        data-modal-hide="popup-modal">
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                    <div class="p-6 text-center">
-                        <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to
-                            delete this product?</h3>
-                        <button data-modal-hide="popup-modal" type="button"
-                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                            Yes, I'm sure
-                        </button>
-                        <button data-modal-hide="popup-modal" type="button"
-                            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
-                            cancel</button>
                     </div>
+
+
                 </div>
             </div>
         </div>
-
-
     </div>
 </x-app-layout>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.select').select2();
-
-    });
-</script>

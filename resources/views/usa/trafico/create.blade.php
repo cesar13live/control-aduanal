@@ -133,7 +133,7 @@
                             <div class="md:w-1/4 flex gap-5">
                                 <x-text-input id="trafico" class="block mt-1 w-5 h-5 uppercase" type="checkbox"
                                     name="ckOpciones[]" value="trafico" />
-                                <x-input-label for="trafico" :value="__('Tráfico')" />
+                                <x-input-label for="trafico" :value="__('Tráfico Directo')" />
                                 <x-input-error :messages="$errors->get('trafico')" class="mt-2" />
                             </div>
 
@@ -257,13 +257,6 @@
                     @csrf
                 </form>
 
-                <x-primary-button>
-                    {{ __('agregar factura') }}
-                </x-primary-button>
-
-                <x-primary-button data-modal-target="popup-modal" data-modal-toggle="popup-modal" type="button">
-                    {{ __('agregar bulto') }}
-                </x-primary-button>
             </div>
 
         </div>
