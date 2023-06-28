@@ -54,17 +54,37 @@
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="factura" role="tabpanel"
-                            aria-labelledby="home-tab">facturas</div>
+                        <div class="tab-pane fade show active" id="factura" role="tabpanel"aria-labelledby="home-tab">
+                            <div class="text-center pt-5">
+                            <h2>Facturaciones</h2>
+
+                            </div>
+                            <div class="flex p-6">
+                                <div class="md:w-full px-12">
+                                    
+                                    <livewire:show-facturas>
+
+                                    <x-primary-button>
+                                        {{ __('facturar') }}
+                                    </x-primary-button>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
                         <div class="tab-pane fade" id="bultos" role="tabpanel" aria-labelledby="profile-tab">bultos
                         </div>
                         <div class="tab-pane fade" id="ferro" role="tabpanel" aria-labelledby="contact-tab">ferro
                         </div>
                         <div class="tab-pane fade" id="patio" role="tabpanel" aria-labelledby="contact-tab">Patio
                         </div>
-                        <div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="contact-tab">Comentarios
+                        <div class="tab-pane fade" id="comentarios" role="tabpanel" aria-labelledby="contact-tab">
+                            Comentarios
                         </div>
-                        <div class="tab-pane fade" id="datos" role="tabpanel" aria-labelledby="contact-tab">Datos de Salida
+                        <div class="tab-pane fade" id="datos" role="tabpanel" aria-labelledby="contact-tab">
+                            Datos de Salida
                         </div>
 
                     </div>

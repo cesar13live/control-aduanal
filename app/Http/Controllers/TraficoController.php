@@ -90,4 +90,8 @@ class TraficoController extends Controller
     public function edit(Trafico $trafico){
         dd($trafico->id);
     }
+
+    public function createFactura(Trafico $trafico){
+        return view('usa.trafico.factura.create');
+    }
 }
