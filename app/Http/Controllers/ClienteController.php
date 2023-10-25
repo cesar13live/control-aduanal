@@ -16,7 +16,7 @@ class ClienteController extends Controller
 
     public function index()
     {
-        $clientes = Cliente::all();
+        $clientes = Cliente::All();
         return view('catalogo.cliente.index',compact('clientes'));
     }
 
@@ -81,7 +81,7 @@ class ClienteController extends Controller
         $cliente->curp = $request->curp;
         $cliente->save();
 
-        return redirect()->route('cliente.index');
+         return redirect()->route('cliente.index');
 
     }
 

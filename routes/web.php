@@ -71,15 +71,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/parte/{parte}', [ParteController::class, 'destroy'])->name('parte.destroy');
 });
 
-//traficos
+//traficos y facturas
 Route::middleware('auth')->group(function (){
     Route::get('/traficos',[TraficoController::class,'index'])->name('trafico.index');
     Route::get('/trafico',[TraficoController::class,'create'])->name('trafico.create');
     Route::post('/trafico',[TraficoController::class,'store'])->name('trafico.store');
     Route::get('/trafico/{trafico:id}',[TraficoController::class,'edit'])->name('trafico.edit');
     Route::get('/factura/{trafico:id}',[TraficoController::class,'createFactura'])->name('factura.create');
+    Route::get('/factura/{trafico:id}/create',[TraficoController::class,'newFactura'])->name('factura.new');
 });
 
+// transportistas
 Route::middleware('auth')->group(function (){
     Route::get('/transportistas',[TransportistaController::class,'index'])->name('tps.index');
     Route::get('/transportista',[TransportistaController::class,'create'])->name('tps.create');

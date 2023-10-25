@@ -92,6 +92,12 @@ class TraficoController extends Controller
     }
 
     public function createFactura(Trafico $trafico){
-        return view('usa.trafico.factura.create');
+        // dd($trafico->id);
+        return view('usa.trafico.factura.index',compact('trafico'));
+    }
+
+    public function newFactura(Trafico $trafico){
+        // dd('testing');
+        return view('usa.trafico.factura.factura.create');
     }
 }
